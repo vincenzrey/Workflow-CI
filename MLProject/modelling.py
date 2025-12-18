@@ -9,11 +9,6 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, confu
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-REPO_OWNER = "vincenzrey"
-REPO_NAME = "Eksperimen_SMSML_Vincenz-Reynard-Citro"
-
-dagshub.init(repo_owner=REPO_OWNER, repo_name=REPO_NAME, mlflow=True)
-
 DATASET_PATH = "namadataset_preprosessing/obesity_preprocessing.csv"
 TARGET_COLUMN = "ObesityCategory"
 
@@ -61,3 +56,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
