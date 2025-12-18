@@ -26,7 +26,6 @@ jobs:
           MLFLOW_TRACKING_USERNAME: ${{ secrets.MLFLOW_USERNAME }}
           MLFLOW_TRACKING_PASSWORD: ${{ secrets.MLFLOW_PASSWORD }}
         run: |
-          # Menjalankan training dan registrasi model
           cd MLProject
           python modelling.py
 
@@ -42,7 +41,6 @@ jobs:
           MLFLOW_TRACKING_USERNAME: ${{ secrets.MLFLOW_USERNAME }}
           MLFLOW_TRACKING_PASSWORD: ${{ secrets.MLFLOW_PASSWORD }}
         run: |
-          # Membangun image dari model terdaftar
           mlflow models build-docker \
             -m "models:/ObesityModel/latest" \
             -n "${{ secrets.DOCKERHUB_USERNAME }}/obesity-classification-mlflow"
